@@ -1,9 +1,16 @@
-import update from './update.js';
+import '@babel/polyfill'
+import 'mutationobserver-shim'
+import Vue from 'vue'
+import './plugins/bootstrap-vue'
+import App from './App.vue'
+import router from '@/router'
+import vueHeadful from 'vue-headful';
 
-// even though Rollup is bundling all your files together, errors and
-// logs will still point to your original source modules
-console.log('if you have sourcemaps enabled in your devtools, click on main.js:5 -->');
+Vue.config.productionTip = false
 
-update();
+Vue.component('vue-headful', vueHeadful)
 
-//document.getElementById('pageHeader').textContent = 'Hello world!';
+new Vue({
+  render: h => h(App),
+  router,
+}).$mount('#app')
