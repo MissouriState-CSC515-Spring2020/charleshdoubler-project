@@ -5,6 +5,7 @@ import './plugins/bootstrap-vue'
 import App from './App.vue'
 import router from '@/router'
 import vueHeadful from 'vue-headful';
+import './registerServiceWorker'
 
 Vue.config.productionTip = false
 
