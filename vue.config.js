@@ -1,6 +1,6 @@
 module.exports = {
 	pwa: {
-		name: 'Photo Gallery',
+		name: 'Basketball Photos',
 		short_name: 'Photos',
 		msTileColor: '#000000',
 		appleMobileWebAppCapable: 'yes',
@@ -17,12 +17,12 @@ module.exports = {
 			theme_color: '#00695c',
 			icons: [
 				{
-					'src': './img/icons/photo-icon-192x192.png',
+					'src': './img/icons/android-chrome-192x192.png',
 					'sizes': '192x192',
 					'type': 'image/png'
 				},
 				{
-					'src': './img/icons/photo-icon-512x512.png',
+					'src': './img/icons/android-chrome-512x512.png',
 					'sizes': '512x512',
 					'type': 'image/png'
 				}
