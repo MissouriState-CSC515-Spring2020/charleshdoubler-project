@@ -1,23 +1,24 @@
-# CSC 515 Project
+# charleshdoubler-project
 
-# How To Install and Start the Project
-
-Clone the Project
-```
-git clone https://github.com/MissouriState-CSC515-Spring2020/charleshdoubler-project.git
-```
-
-Install The Modules
+## Project setup
 ```
 npm install
 ```
 
-Build the Program
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
 ```
 npm run build
 ```
 
-Run the Program
+### Lints and fixes files
 ```
-npm start
+npm run lint
 ```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
