@@ -1,23 +1,27 @@
 <template>
-    <b-row>
-        <b-col class="mx-auto text-center">
-            <img class="w-75" @click="clickFunc()" :src="asset" alt="image detail"/>
-            <div class="w-75 mx-auto mt-3">
-                
+    <div class="recentPhotos p-3">
+        <div class="row overflow-wrap">
+            <div v-for="srcUrl in srcList" :key="srcUrl" class="videoContainer offset-1 offset-sm-0 col-10 col-sm-4 col-md-3 col-lg-2 mb-3">
+                <ImageDetail> :src=srcUrl></ImageDetail>
             </div>
-        </b-col>
-    </b-row>
+        </div>
+    </div>
 </template>
-
 <script>
 export default {
     name: 'ImageDetail',
-    props: ['asset', 'title', 'desc', 'clickFunc']
+    components: {
+        ImageDetail : () => import('@/components/ImageDetail')
+    },
+    props: {
+        // remove me TODO, this is just so we can change the image for category and home for check point 3.
+        srcList: Array,
+        alt: String
+    }
 }
 </script>
-
 <style scoped>
-img {
-    border-radius: 15px;
-}
+    .videoContainer {
+        display: inline-block;
+    }
 </style>

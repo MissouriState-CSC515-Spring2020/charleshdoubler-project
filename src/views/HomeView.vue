@@ -1,37 +1,38 @@
 <template>
-    <b-row>
-        <vue-headful
-            title="Basketball"
-            description="Home"
-        />
-        <b-col class="pl-5 pr-5 pt-3 text-center">
-            <h2>Basketball</h2>
-            <b-row>
-                <b-col v-for="i in 4" :key="i" class="p-2" cols="10" sm="5" md="3" lg="3">
-                    <image-detail
-                        :asset="require('@/assets/Sport-Basketball.jpg')"
-                        :clickFunc="routeToSingleView"
-                    />
-                </b-col>
-            </b-row>
-        </b-col>
-    </b-row>
+    <div>
+        <ImageDetail> :srcList=this.thumbnailList alt="Vue Logo"></ImageDetail>
+    </div>
 </template>
 
 <script>
-import ImageDetail from '@/components/ImageDetail'
 export default {
     name: 'HomeView',
+    data: function() {
+        return {
+            thumbnailList: []
+        }
+    },
     components: {
-        ImageDetail
+        ImageDetail : () => import('@/components/ImageDetail')
     },
     methods: {
-        routeToSingleView() {
-            this.$router.push('/about')
+        getThumbnails: function () {
+            let sessionKeys = Object.keys(sessionStorage);
+            let list = [];
+            for (let i = 0; i < sessionKeys.length; ++i) {
+                let item = sessionStorage.getItem(sessionKeys[i]);
+                let jsonArray = JSON.parse(item);
+                for (let i = 0; i < 2; ++i) {
+                    list[list.length] = jsonArray[i].snippet.thumbnails.high.url;
+                }
+            }
+            this.thumbnailList = list;
         }
+    },
+    mounted: function() {
+        this.getThumbnails();
     }
 }
 </script>
-
 <style scoped>
 </style>

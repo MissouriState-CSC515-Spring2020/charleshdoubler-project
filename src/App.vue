@@ -9,13 +9,11 @@
 </template>
 
 <script>
-import NavigationBar from './components/NavigationBar.vue'
-import Search from './components/Search.vue'
 export default {
   name: 'app',
   components: {
-    NavigationBar,
-    Search
+    NavigationBar : () => import('@/components/NavigationBar'),
+    Search : () => import('@/components/Search'),
   }
 }
 </script>
