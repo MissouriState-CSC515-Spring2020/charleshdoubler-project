@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <NavigationBar></NavigationBar>
+    <search></search>
     <b-container fluid>
       <router-view :key="$route.fullPath"></router-view>
     </b-container>
@@ -8,11 +9,11 @@
 </template>
 
 <script>
-import NavigationBar from './components/NavigationBar.vue'
 export default {
   name: 'app',
   components: {
-    NavigationBar
+    NavigationBar : () => import('@/components/NavigationBar'),
+    Search : () => import('@/components/Search'),
   }
 }
 </script>
