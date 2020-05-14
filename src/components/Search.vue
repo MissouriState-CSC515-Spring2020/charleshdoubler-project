@@ -41,7 +41,7 @@
 </template>
 <script>
 
-const apiKey = 'AIzaSyBIwJbl8s6Q6DmCCTj-aqh3vfCNX4gz-dc';
+const apiKey = 'AIzaSyCPumH4_kGiQS2MSor5Q3ZZSsNRroweUIQ';
 
 export default {
     name: "Search",
